@@ -6,7 +6,7 @@
 
 ### 🧩 JVM Flags
 ```
--XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M -Dfml.ignoreInvalidMinecraftCertificates=true -Dfml.ignorePatchDiscrepancies=true -Djava.net.preferIPv4Stack=true -XX:+AlwaysActAsServerClassMachine -XX:+DisableExplicitGC -XX:NmethodSweepActivity=1 -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=640000 -XX:NodeLimitFudgeFactor=30000 -XX:+UseVectorCmov -XX:+PerfDisableSharedMem -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:ThreadPriorityPolicy=1 -XX:AllocatePrefetchStyle=3 -XX:+UseLargePages -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+OptimizeStringConcat
+-XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M -Dfml.ignoreInvalidMinecraftCertificates=true -Dfml.ignorePatchDiscrepancies=true -Djava.net.preferIPv4Stack=true -XX:+AlwaysActAsServerClassMachine -XX:+DisableExplicitGC -XX:NmethodSweepActivity=1 -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=640000 -XX:NodeLimitFudgeFactor=30000 -XX:+UseVectorCmov -XX:+PerfDisableSharedMem -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:ThreadPriorityPolicy=1 -XX:AllocatePrefetchStyle=3 -XX:+UseLargePages -XX:+UseStringDeduplication -XX:+UseCompressedOops -XX:+OptimizeStringConcat -XX:+DisableAttachMechanism -XX:+UseNUMA
 ```
 
 ### 🎓 Flag description
@@ -57,3 +57,9 @@
 -XX:+UseCompressedOops: This option enables the use of compressed object pointers in the JVM, which reduces memory usage on 64-bit systems.
 
 -XX:+OptimizeStringConcat: This option enables optimized string concatenation in the JVM, which can lead to improved performance when working with string concatenation operations.
+
+-XX:+DisableAttachMechanism: This option disables the JVM's attach mechanism, which allows remote debugging and profiling tools to attach to a running JVM process. By disabling this mechanism, you prevent external tools from attaching to the JVM, which can reduce overhead and improve performance by avoiding the potential impact of remote debugging or profiling operations.
+
+-XX:+UseNUMA: This option enables the use of NUMA (Non-Uniform Memory Access) optimizations for thread scheduling on NUMA architectures. NUMA is a memory architecture where multiple processors have local memory, and accessing local memory is faster than remote memory access. By enabling this argument, the JVM can take advantage of NUMA-aware thread scheduling, improving memory access and potentially enhancing performance on NUMA systems.
+
+
